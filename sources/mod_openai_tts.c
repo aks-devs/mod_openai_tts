@@ -15,14 +15,12 @@
  * License.
  *
  * Module Contributor(s):
- *  Konstantin Alexandrin <akscfx@gmail.com>
+ *  aks  https://akstel.org
  *
  *
  * OpenAI Text-To-Speech service for the Freeswitch
  * https://platform.openai.com/docs/guides/text-to-speech
  *
- * Development repository:
- * https://github.com/akscf/mod_openai_tts
  *
  */
 #include "mod_openai_tts.h"
@@ -460,7 +458,9 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_openai_tts_load) {
     speech_interface->speech_numeric_param_tts = speech_numeric_param_tts;
     speech_interface->speech_float_param_tts = speech_float_param_tts;
 
-    switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE, "OpenAI-TTS (%s)\n", MOD_VERSION);
+    switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE, "OpenAI Text-to-Speech (%s)\n", MOD_VERSION);
+    switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE, "(C)2025 akstel.org\n");
+
 out:
     if(xml) {
         switch_xml_free(xml);
